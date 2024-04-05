@@ -245,32 +245,32 @@ const MyListing = () => {
   //   "allCategories"
   // );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const allCategories = await requestApiData.getAllMyListing();
-        setListingData(allCategories.data.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const allCategories = await requestApiData.getAllMyListing();
+  //       setListingData(allCategories.data.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   // category Api
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const allCategories = await requestApiData.getAllCategory();
-        setCategory(allCategories.data.data);
-        // Do something with allCities here
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const allCategories = await requestApiData.getAllCategory();
+  //       setCategory(allCategories.data.data);
+  //       // Do something with allCities here
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const getCategory = listingData.map((item: any) => item?.categoryID);
   console.log(category, "category");
@@ -309,7 +309,8 @@ const MyListing = () => {
         </Button>
       </Grid>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {currentListData.map((item: any, index: any) => (
+        {/* {currentListData.map((item: any, index: any) => ( */}
+        {listData.map((item: any, index: any) => (
           <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
             {/* {console.log(item, "item")} */}
 
